@@ -1,0 +1,48 @@
+# pick_up data config
+data:
+  data_keys: ['shanghai', 'beijing']
+  beijing:
+    dataset_path: data/beijing/dataset.npy
+    adjacency_matrix_path: data/beijing/matrix.npy
+    time_step: 273
+    node_num: 450
+    mean: 828.679
+    std: 2211.218
+  
+  shanghai:
+    dataset_path: data/shanghai/dataset.npy
+    adjacency_matrix_path: data/shanghai/matrix.npy
+    time_step: 273
+    node_num: 311
+    mean: 450.146
+    std: 625.564
+
+  zhengzhou:
+    dataset_path: data/zhengzhou/dataset.npy
+    adjacency_matrix_path: data/zhengzhou/matrix.npy
+    time_step: 273
+    node_num: 95
+    mean: 323.024
+    std: 601.394
+  
+task:
+  his_num: 12
+  pred_num: 1
+  batch_size: 64
+  test_batch_size: 128
+  task_num: 2
+
+model:
+  node_feature_dim: 1
+  edge_feature_dim: 4
+  message_dim: 1
+  hidden_dim: 16
+  output_dim: 1
+  meta_dim: 16
+  update_lr: 0.01
+  meta_lr: 0.01
+  loss_lambda: 1.5
+  update_step: 5
+  update_step_test: 10
+  tp: True
+  sp: True
